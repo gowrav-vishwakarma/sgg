@@ -1,7 +1,7 @@
 <?php
 class Frontend extends ApiFrontend {
 
-    public $title = "Estimator";
+    public $title = "SGG Admin";
 
     function init() {
         parent::init();
