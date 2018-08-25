@@ -41,7 +41,7 @@ class page_members extends Page {
 	function page_add(){
 		$member = $this->add('Model_Member');
 
-		$system=['left_id','right_id','parent_id','parent_side','created_at','completed_2_4','paid_completed','completed_sponsored_ids'];
+		$system=['left_id','right_id','parent_id','parent_side','created_at','completed_2_4','paid_completed','completed_sponsored_ids','created_by_id'];
 		
 		foreach ($system as $f) {
 			$member->getElement($f)->system(true);

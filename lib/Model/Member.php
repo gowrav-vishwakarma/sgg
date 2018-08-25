@@ -9,6 +9,8 @@ class Model_Member extends Model_Table{
 
 		$this->getElement('id')->sortable(true);
 
+		$this->hasOne('Staff','created_by_id')->defaultValue($this->app->auth->model->id);
+
 		$this->addField('member_name')->mandatory(true);
 		$this->addField('father_name');
 		$this->addExpression('name')->set(function($m,$q){
