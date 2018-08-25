@@ -10,6 +10,7 @@ class Model_Member extends Model_Table{
 		$this->getElement('id')->sortable(true);
 
 		$this->addField('member_name')->mandatory(true);
+		$this->addField('father_name');
 		$this->addExpression('name')->set(function($m,$q){
 			return "CONCAT(id,' ',member_name)";
 		})->sortable(true);
@@ -24,6 +25,7 @@ class Model_Member extends Model_Table{
 		$this->addField('city');
 		$this->addField('state');
 		$this->addField('pan_no');
+		$this->addField('adhaar_no');
 		$this->addField('bank_name');
 		$this->addField('bank_branch');
 		$this->addField('ifsc_code');
