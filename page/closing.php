@@ -9,6 +9,7 @@ class page_closing extends Page {
 		$closing = $this->add('Model_Closing');
 
 		$grid = $this->add('Grid')->addClass('closing_grid');
+		$grid->js('reload')->reload();
 		$grid->setModel($closing);
 
 		if($_GET['details']){
@@ -59,6 +60,8 @@ class page_closing extends Page {
 
 			// set paid_completed = 1 where (completed_2_4 and !paid_completed)
 			// set completed_sponsored_ids=0 where (completed_sponsored_ids > 0 )
+
+			$form->js(null,$form->js()->trigger('reload')->_selector('.closing_grid'))->univ()->closeDialog()->successMessage('Closing Done')->execute();
 
 		}
 
