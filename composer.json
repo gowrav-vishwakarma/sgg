@@ -1,0 +1,16 @@
+{
+    "name": "gowrav/estimator",
+    "description": "Civil G-Shedule based estimate developer",
+    "type": "project",
+    "require": {
+        "xepan/atk4": "4.3"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Gowrav Vishwakarma",
+            "email": "gowravvishwakarma@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
