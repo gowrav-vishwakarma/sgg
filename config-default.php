@@ -17,3 +17,4 @@ $config['status_icon'] = [];
 
 $config['filestore']['chmod'] = 0755;
 $config['paymentgateways'] = ['Instamojo','CCAvenue'];
+$config['allow_reset'] = true;

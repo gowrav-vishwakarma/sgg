@@ -5,8 +5,7 @@ class page_config extends Page {
 	
 	public $title = "Configuration Management";
 
-	function init(){
-		parent::init();
+	function page_index(){
 
 		$staff_m = $this->add('Model_Staff');
 		$c = $this->add('CRUD',$this->add('Model_ACL')->setNoneForOthers());
@@ -34,6 +33,23 @@ class page_config extends Page {
 			$form->js()->reload()->univ()->successMessage('Done')->execute();
 		}
 
+		if($this->app->getConfig('allow_reset')){
+			$btn = $this->add('Button')->set('Reset');
+			$btn->js('click')->univ()->frameURL('Reset Data', $this->app->url('./reset'));
+		}
+
+	}
+
+	function page_reset(){
+		$btn = $this->add('Button')->set('RESET');
+		
+		if($btn->isClicked()){
+
+			$this->app->db->dsql()->table('closing_details')->truncate();
+			$this->app->db->dsql()->table('closings')->truncate();
+			$this->app->db->dsql()->table('member')->truncate();
+			$this->js()->univ()->successMessage('Data Reset done')->execute();
+		}
 
 	}
 }
